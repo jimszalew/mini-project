@@ -1,5 +1,16 @@
 FactoryGirl.define do
   factory :sales_rep do
-    name "MyString"
+
+    sequence :name do
+      "#{i}Joe Johnston"
+    end
+
+    sequence :company do
+      "#{i}Sysco"
+    end
+
+    sequence :category do
+      "#{i}General"
+    end
   end
 end
