@@ -15,7 +15,8 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+    @restaurant = Restaurant.find_by(params[:user_id])
+    flash[:success] = "Welcome, #{current_user.username}"
   end
 
   private

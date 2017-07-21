@@ -15,7 +15,7 @@ RSpec.feature "User creates a new account" do
 
     expect(current_path).to eq("/sales_reps/new")
     expect(page).to have_content("Welcome #{user_attributes[:username]}!")
-    expect(page).to have_content("Add a new Sales Rep")
+    expect(page).to have_content("Create your Sales Rep profile")
   end
 
   scenario "as a restaurant" do
@@ -31,6 +31,6 @@ RSpec.feature "User creates a new account" do
 
     expect(current_path).to eq("/restaurants/new")
     expect(page).to have_content("Welcome #{user_attributes[:username]}!")
-    expect(page).to have_content("Add a new restaurant")
+    expect(page).to have_content("Create your restaurant's profile")
   end
 end

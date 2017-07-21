@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates_presence_of :password, :role
 
-  enum role: {"Restaurant" => 1,
-              "Sales Rep" => 2,
-              "Admin" => 3}
+  enum role: ["Default", "Restaurant", "Sales Rep", "Admin"]
+
+  has_many :restaurants
 end
