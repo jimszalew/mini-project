@@ -2,14 +2,13 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @roles = User.roles.reject{|k, v| k == "Admin"}
+    @roles = User.roles.reject{|k, v| k == "Admin" || k == "Default"}
   end
 
   def create
     @user = User.new(user_attributes)
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = "Welcome #{@user.username}!"
       if @user.role == "Restaurant"
         redirect_to new_restaurant_path
       elsif @user.role == "Sales Rep"

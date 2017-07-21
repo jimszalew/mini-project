@@ -12,6 +12,8 @@
   <%= f.label :phone %><br>
   <%= f.text_field :phone %><br>
 
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
   <%= f.submit %>
 
 <% end %>
