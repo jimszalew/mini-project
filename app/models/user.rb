@@ -7,4 +7,5 @@ class User < ApplicationRecord
   enum role: ["Default", "Restaurant", "Sales Rep", "Admin"]
 
   has_many :restaurants
+  has_many :sales_reps
 end

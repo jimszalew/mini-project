@@ -5,6 +5,6 @@ class SalesRepsController < ApplicationController
   end
 
   def show
-    
+    @sales_rep = SalesRep.find_by(params[:user_id])
   end
 end
