@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :restaurant do
     sequence :name do |i|
       "#{i}Fruition"

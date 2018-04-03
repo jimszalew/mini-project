@@ -1,24 +1,15 @@
-# README
+* Ruby version: 2.3.1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* System dependencies:
 
-Things you may want to cover:
+* Configuration:
 
-* Ruby version
+* Database creation: rake db:drop db:create
 
-* System dependencies
+* Database initialization: rake db:migrate db:seed
 
-* Configuration
+* How to run the test suite: rspec
 
-* Database creation
+* Services:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* A Ruby on Rails project aspiring to create a comprehensive ordering platform for restaurant and bar workers. Ordering stock of food or beverage from multiple vendors often takes quite a bit of time. Between writing up the order, placing the orders to the various vendors through different means (phone, email, vendor apps), and submitting invoices to establishment bookkeeping, food and beverage workers can spend upwards of 8 hours a week ordering product. This app seeks to automate as much of that process as possible.
