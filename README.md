@@ -15,3 +15,5 @@
 * A Ruby on Rails project aspiring to create a comprehensive ordering platform for restaurant and bar workers. Ordering stock of food or beverage from multiple vendors often takes quite a bit of time. Between writing up the order, placing the orders to the various vendors through different means (phone, email, vendor apps), and submitting invoices to establishment bookkeeping, food and beverage workers can spend upwards of 8 hours a week ordering product. This app seeks to automate as much of that process as possible.
 
 * Currently switching to a new schema shown in the file 86-86 schema design.
+
+* Project tracker: https://waffle.io/jimszalew/mini-project
