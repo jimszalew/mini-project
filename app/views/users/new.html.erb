@@ -1,12 +1,14 @@
 <h1>Create an Account</h1>
 
 <%= form_for @user do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %><br>
+
   <%= f.label :username %>
   <%= f.text_field :username %><br>
 
   <%= f.label :password %>
   <%= f.password_field :password %><br>
 
-  <%= f.select :role, @roles.keys.map {|role| [role.titleize, role]}, prompt: "Select One" %>
   <%= f.submit "Create Account" %>
 <% end %>
