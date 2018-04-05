@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       flash[:notice] = "Welcome #{@user.username}"
+      redirect_to profile_path(@user)
     end
   end
 

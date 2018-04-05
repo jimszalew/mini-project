@@ -1,18 +1,14 @@
 require "rails_helper"
 
 RSpec.feature "User logs in and out" do
-  scenario "with valid credentials as a Restaurant" do
+  scenario "with valid credentials" do
     user_attributes = {
       username: "jimbotron",
       password: "secretpassword",
-      role: "Restaurant"
+      email: "skibbidydodop@bebop.bedop"
     }
 
     user = User.create(user_attributes)
-    user.restaurants.create(name: "Foods",
-                            description: "we make food",
-                            address: "123 street",
-                            phone: "720-555-5555" )
 
     visit login_path
 
@@ -21,44 +17,13 @@ RSpec.feature "User logs in and out" do
 
     click_on "Login"
 
-    expect(current_path).to eq(restaurant_path(user))
+    expect(current_path).to eq(profile_path(user))
     expect(page).to have_content("Welcome, #{user.username}")
-    expect(page).to have_content("Successful Login")
 
     click_on "Logout"
 
     expect(current_path).to eq(root_path)
     expect(page).to_not have_content("#{user.username}")
-    expect(page).to have_content("Goodbye")
-  end
-
-  scenario "with valid credentials as a Sales Rep" do
-    user_attributes = {
-      username: "jimbotron",
-      password: "secretpassword",
-      role: "Sales Rep"
-    }
-
-    user = User.create(user_attributes)
-    user.sales_reps.create(name: "Deaner",
-                           company: "Sysco",
-                           category: "General")
-
-    visit login_path
-
-    fill_in "Username", with: user.username
-    fill_in "session[password]", with: user_attributes[:password]
-
-    click_on "Login"
-
-    expect(current_path).to eq(sales_rep_path(user))
-    expect(page).to have_content("Welcome, #{user.username}")
-    expect(page).to have_content("Successful Login")
-
-    click_on "Logout"
-
-    expect(current_path).to eq(root_path)
-    expect(page).to_not have_content("#{user.username}")
-    expect(page).to have_content("Goodbye")
+    expect(page).to have_content("See you next time!")
   end
 end
