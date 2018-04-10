@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_attributes)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to new_profile_path
+      redirect_to profiles_path
     else
     end
   end

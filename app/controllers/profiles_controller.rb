@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  def new
+  def index
 
   end
 

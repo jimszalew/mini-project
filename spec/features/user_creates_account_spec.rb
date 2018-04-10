@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "User creates a new account" do
-  scenario "and is redirected to account setup page" do
+  scenario "and is redirected to profile setup page" do
     user_attributes = { email: "jim.jim@jim.com",
                         username: "jimbotron",
                         password: "pa$$word"}
@@ -13,7 +13,10 @@ RSpec.feature "User creates a new account" do
 
     click_button "Create Account"
 
-    expect(current_path).to eq("/profiles/new")
+    expect(current_path).to eq("/profiles")
     expect(page).to have_content("Welcome, #{user_attributes[:username]}")
+    expect(page).to have_content("What type of account will you be creating?")
+    expect(page).to have_link("Vendor")
+    expect(page).to have_link("Customer")
   end
 end
