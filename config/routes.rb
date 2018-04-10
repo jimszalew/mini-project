@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users, only: [:new, :create, :show]
-  resources :profiles, only: [:new, :create, :show, :index]
+  resources :profiles, only: [:index]
+  resources :vendor_profiles, only: [:new, :create, :show, :index]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

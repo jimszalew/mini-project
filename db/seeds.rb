@@ -1,1 +1,1 @@
-Role.create([{name: 'Client'}, {name: 'Vendor'}, {name: 'Page Admin'}])
+Role.create([{name: 'customer'}, {name: 'vendor'}, {name: 'admin'}])

@@ -5,9 +5,12 @@ FactoryBot.define do
       "#{i}Jimbo"
     end
 
-    sequence :password_digest do |i|
+    sequence :password do |i|
       "#{i}pa$$word"
     end
 
+    sequence :email do |i|
+      "#{i}jumbo@shrimp.com"
+    end
   end
 end
