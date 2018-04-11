@@ -9,6 +9,9 @@ RSpec.feature "User logs in and out" do
     }
 
     user = User.create(user_attributes)
+    Role.create(name: 'customer')
+    Role.create(name: 'vendor')
+    UserRole.create(role_id: 2, user: user)
 
     visit login_path
 
@@ -17,7 +20,7 @@ RSpec.feature "User logs in and out" do
 
     click_on "Login"
 
-    expect(current_path).to eq(profile_path(user))
+    expect(current_path).to eq(vendor_profile_path(user))
     expect(page).to have_content("Welcome, #{user.username}")
 
     click_on "Logout"

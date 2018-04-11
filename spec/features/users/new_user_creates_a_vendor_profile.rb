@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe 'As a new user I Vendor account' do
   context 'and I am directed to the new Vendor profile form' do
     it 'I can create my profile' do
+      Role.create(name: 'customer')
       Role.create(name: 'vendor')
       user_attributes = { email: "jim.jim@jim.com",
                           username: "jimbotron",
@@ -27,7 +28,7 @@ RSpec.describe 'As a new user I Vendor account' do
 
       click_button 'Save Profile Info'
 
-      expect(current_path).to eq("/profile/#{user.id}")
+      expect(current_path).to eq("/vendor_profiles/#{User.last.id}")
     end
   end
 end
