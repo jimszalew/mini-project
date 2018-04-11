@@ -1,0 +1,20 @@
+<h1>Create your profile</h1>
+
+<%= form_for @customer_profile do |f| %>
+  <%= f.label :company %>
+  <%= f.text_field :company %><br>
+
+  <%= f.label :delivery_address %>
+  <%= f.text_field :delivery_address %><br>
+
+  <%= f.label :phone %>
+  <%= f.text_field :phone %><br>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+
+  <%= f.submit 'Save Profile Info' %>
+<% end %>

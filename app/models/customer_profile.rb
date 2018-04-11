@@ -1,0 +1,2 @@
+class CustomerProfile < ApplicationRecord
+end

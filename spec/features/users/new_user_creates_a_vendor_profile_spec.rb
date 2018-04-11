@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'As a new user I Vendor account' do
+RSpec.describe 'As a new user I create a Vendor account' do
   context 'and I am directed to the new Vendor profile form' do
     it 'I can create my profile' do
       Role.create(name: 'customer')
