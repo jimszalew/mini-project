@@ -11,7 +11,7 @@ RSpec.feature "User logs in and out" do
     user = User.create(user_attributes)
     Role.create(name: 'customer')
     Role.create(name: 'vendor')
-    UserRole.create(role_id: 2, user: user)
+    UserRole.create(role: Role.last, user: user)
 
     visit login_path
 
